@@ -7,6 +7,7 @@ package perlinnoise;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import static javafx.application.Application.launch;
 import javafx.fxml.Initializable;
 
 /**
@@ -21,7 +22,14 @@ public class ViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+        PerlinNoise pn = new PerlinNoise(0, 4);
+        pn.fillPoints();
+        pn.printAllVects();
+        pn.printAllVects();
+        System.out.println("New PerlinNoise:\n\n");
+        PerlinNoise pn2 = new PerlinNoise(3, 5);
+        pn2.fillPoints();
+        pn2.printAllVects();
+    }
+
 }
