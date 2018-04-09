@@ -6,11 +6,6 @@
 package perlinnoise;
 
 import java.util.ArrayList;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 /**
  *
@@ -57,14 +52,17 @@ public class PerlinNoise {
 
     //create
 
+   
     
+//    /**
+//     * @param args the command line arguments
+//     */
+//    public static void main(String[] args) {
+//        PerlinNoise pn = new PerlinNoise(0);
+//        pn.fillPoints();
+//        pn.printAllVects();
+//        pn.printAllVects();
+//    }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
-
-    }
 
 }
