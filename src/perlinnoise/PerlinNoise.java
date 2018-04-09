@@ -14,17 +14,18 @@ import java.util.ArrayList;
 public class PerlinNoise {
 
     //define amount of points of the length of a square
-    private int amountPoints;
+    private int amountPoints, pixels;
     //define ArrayPoints
     private ArrayList<Point> points = new ArrayList<>();
 
     //minValue of Points is 2
-    public PerlinNoise(int amountPoints) {
+    public PerlinNoise(int amountPoints, int pixels) {
         if (amountPoints < 2) {
             System.out.println("MinValue: 2!");
             amountPoints = 2;
         }
         this.amountPoints = amountPoints;
+        this.pixels = pixels;
     }
 
     /**
@@ -41,23 +42,36 @@ public class PerlinNoise {
 
     //output
     public void printAllVects() {
+        int i = 1;
         for (Point point : points) {
-            System.out.println("Vec: " + point.getvX() + " " + point.getvY());
+            System.out.println("Vec:" + i + " (" + point.getvX() + " " + point.getvY() + ")");
+            i++;
         }
         System.out.println("");
     }
 
     //create
-    
-    
+    public void looping() {
+        for (int x = 0; x < amountPoints - 1; x++) {
+            for (int y = 0; y < amountPoints - 1; y++) {
+
+            }
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        PerlinNoise pn = new PerlinNoise(0);
+        PerlinNoise pn = new PerlinNoise(0, 4);
         pn.fillPoints();
         pn.printAllVects();
         pn.printAllVects();
+        System.out.println("New PerlinNoise:\n\n");
+        PerlinNoise pn2 = new PerlinNoise(3, 5);
+        pn2.fillPoints();
+        pn2.printAllVects();
+
     }
 
 }
