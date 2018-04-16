@@ -36,9 +36,21 @@ public class PerlinNoise {
         for (int x = 0; x < amountPoints; x++) {
             for (int y = 0; y < amountPoints; y++) {
                 points.add(new Point(x, y));
+
             }
         }
     }
+//    //Return fuction
+//    public ArrayList<Point> getPoints(){
+//        ArrayList<Point> points = new ArrayList<>();
+//        for (int x = 0; x < amountPoints; x++) {
+//            for (int y = 0; y < amountPoints; y++) {
+//                points.add(new Point(x, y));
+//                
+//            }
+//        }
+//        return points;
+//    }
 
     //output
     public void printAllVects() {
@@ -51,9 +63,30 @@ public class PerlinNoise {
     }
 
     //create
+    public void build() {
+        //loop for 
+        for (int i = 0; i < points.size() - 3; i++) {
+            pixelLooping(points.get(i),points.get(i+1),points.get(i+2),points.get(i+3));
+        }
+    }
 
-   
-    
+    public void pixelLooping(Point p1, Point p2, Point p3, Point p4) {
+        if (getPixels() != 0) {
+            for (int x = 0; x < getPixels(); x++) {
+                for (int y = 0; y < getPixels(); y++) {
+                    
+                }
+            }
+        } else {
+            System.out.println("Please first fill some points! ");
+        }
+
+    }
+
+    public void startAlgorithm() {
+
+    }
+
 //    /**
 //     * @param args the command line arguments
 //     */
@@ -63,6 +96,28 @@ public class PerlinNoise {
 //        pn.printAllVects();
 //        pn.printAllVects();
 //    }
+    public int getAmountPoints() {
+        return amountPoints;
+    }
 
+    public void setAmountPoints(int amountPoints) {
+        this.amountPoints = amountPoints;
+    }
+
+    public int getPixels() {
+        return pixels;
+    }
+
+    public void setPixels(int pixels) {
+        this.pixels = pixels;
+    }
+
+    public ArrayList<Point> getPoints() {
+        return points;
+    }
+
+    public void setPoints(ArrayList<Point> points) {
+        this.points = points;
+    }
 
 }
