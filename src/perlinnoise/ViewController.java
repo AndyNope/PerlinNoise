@@ -22,10 +22,11 @@ public class ViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        PerlinNoise pn = new PerlinNoise(0, 4);
+        PerlinNoise pn = new PerlinNoise(3, 500);
         pn.fillPoints();
         pn.printAllVects();
         pn.printAllVects();
+        pn.build();
         System.out.println("New PerlinNoise:\n\n");
         PerlinNoise pn2 = new PerlinNoise(3, 5);
         pn2.fillPoints();

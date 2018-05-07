@@ -74,13 +74,26 @@ public class PerlinNoise {
         if (getPixels() != 0) {
             for (int x = 0; x < getPixels(); x++) {
                 for (int y = 0; y < getPixels(); y++) {
-                    
+                    //dot product function
+                    int sum = (scalarAddition(x, y, p1) 
+                            + scalarAddition(x, y, p2) 
+                            + scalarAddition(x, y, p3) 
+                            + scalarAddition(x, y, p4))/4;
+                    System.out.print(sum + "  ");
                 }
+                System.out.println("");
             }
         } else {
             System.out.println("Please first fill some points! ");
         }
 
+    }
+    
+    public int scalarAddition(int x, int y, Point corner){
+        //calculate distance
+        int distanceX = x - (corner.getX() * getPixels()), distanceY = y - (corner.getY() * getPixels());
+        int scalar = (distanceX * corner.getvX()) + (distanceY + corner.getvY());
+        return scalar;
     }
 
     public void startAlgorithm() {
